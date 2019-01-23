@@ -1,0 +1,14 @@
+{
+    "name": "stanislav2014/prj22",
+    "description": "hexlet project test",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Stanislav",
+            "email": "s_admin@mail.ru"
+        }
+    ],
+    "require": {
+        "docopt/docopt": "^1.0"
+    }
+}
