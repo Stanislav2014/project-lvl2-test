@@ -8,6 +8,17 @@
             "email": "s_admin@mail.ru"
         }
     ],
+    "bin": "bin/gendiff",
+    "autoload": {
+        "files": [
+            "src/GenDiff.php",
+            "src/bootstrap.php"
+        ],
+        "psr-4":{
+            "\\Differ\\GenDIff\\": "src",
+            "\\Differ\\Tests\\": "tests"
+        }
+    },
     "require": {
         "docopt/docopt": "^1.0"
     }
