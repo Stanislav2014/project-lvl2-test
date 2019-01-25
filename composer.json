@@ -14,12 +14,15 @@
             "src/GenDiff.php",
             "src/bootstrap.php"
         ],
-        "psr-4":{
+        "psr-4": {
             "\\Differ\\GenDIff\\": "src",
             "\\Differ\\Tests\\": "tests"
         }
     },
     "require": {
         "docopt/docopt": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5"
     }
 }

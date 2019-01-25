@@ -16,5 +16,20 @@ DOC;
 
 function run()
 {
-    \Docopt::Handle(DOC);
+    $args = \Docopt::Handle(DOC);
+
+    $beforeFile = $args['firstFile'];
+    $afterFile = $args['secondFile'];
+    $format = $args['fmt'];
+
+    genDiff($beforeFile, $afterFile);
+    
 }
+
+function genDiff($beforeFile, $afterFile, $format = 'pretty')
+{
+    $content1 = 
+
+}
+
+
