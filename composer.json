@@ -9,10 +9,19 @@
         }
     ],
     "bin": "bin/gendiff",
+    "scripts": {
+        "phpunit":"phpunit tests"
+    },
     "autoload": {
         "files": [
+            "src/Cli.php",
             "src/GenDiff.php",
-            "src/bootstrap.php"
+            "src/bootstrap.php",
+            "src/Ast.php",
+            "src/Parser.php",
+            "src/renderers/Plain.php",
+            "src/renderers/Pretty.php",
+            "src/renderers/Renderer.php"
         ],
         "psr-4": {
             "\\Differ\\GenDIff\\": "src",
@@ -20,9 +29,12 @@
         }
     },
     "require": {
-        "docopt/docopt": "^1.0"
+        "docopt/docopt": "^1.0",
+        "symfony/yaml": "^4.2",
+        "funct/funct": "^1.5"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.5"
+        "phpunit/phpunit": "^7.5",
+        "squizlabs/php_codesniffer": "^3.4"
     }
 }

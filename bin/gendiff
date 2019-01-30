@@ -4,4 +4,4 @@
 
 require_once './src/bootstrap.php';
 
-Differ\GenDiff\run();
+Differ\Cli\run();
