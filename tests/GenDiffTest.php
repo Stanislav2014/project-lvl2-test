@@ -7,7 +7,7 @@ use function Differ\GenDiff\genDiff;
 
 class GenDiffTest extends TestCase
 {
-   public function testJsonPretty()
+    public function testJsonPretty()
     {
         $expected = file_get_contents('./tests/fixtures/expected');
         //var_dump($expected);

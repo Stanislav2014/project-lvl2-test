@@ -29,7 +29,7 @@ function getPlain($item, $path = [])
 
     ] = $item;
 
-    $afterValue = is_array($afterValue) ? 'complex value' : $afterValue; //: is_bool($afterValue) ? boolToStr($afterValue) : $afterValue ;
+    $afterValue = is_array($afterValue) ? 'complex value' : $afterValue;
     $beforeValue = is_array($beforeValue) ? 'complex value' : $beforeValue;
 
     $path[] = $key ;
