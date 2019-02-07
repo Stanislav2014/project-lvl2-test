@@ -10,10 +10,8 @@ function pretty($ast)
 {
     $rended = array_map(function ($item) {
         return getPretty($item, 1);
-
     }, $ast);
     return "{" . "\n" . implode("\n", $rended) . "\n" . "}";
-
 }
 
 function getPretty($item, $depth = 1)
@@ -39,13 +37,15 @@ function getPretty($item, $depth = 1)
         
 
         switch ($type) {
-
             case 'nested':
-                return 
-                getSpace($depth) . "$key: {" . "\n" . implode("\n",
+                return
+                getSpace($depth) . "$key: {" . "\n" . implode(
+                    "\n",
                     array_map(function ($item) use ($depth) {
                         return getPretty($item, $depth + 1);
-                    }, $children)) . "\n" .
+                    },
+                    $children)
+                ) . "\n" .
                     getSpace($depth) . "}";
 
             case 'unchanged':
@@ -53,15 +53,14 @@ function getPretty($item, $depth = 1)
         
             case 'changed':
                 return getSpace($depth, "+ ") . $key . ": " . $afterValue . "\n" .
-                       getSpace($depth, "- "). $key . ": " . $beforeValue;
+                       getSpace($depth, "- ") . $key . ": " . $beforeValue;
         
             case 'added':
                 return getSpace($depth, "+ ") . $key . ": " . $afterValue;
 
             case 'deleted':
                 return getSpace($depth, "- ") . $key . ": " . $beforeValue;
-            }
+        }
 
     //var_dump($rended);
-
 }

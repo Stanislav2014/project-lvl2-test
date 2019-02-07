@@ -6,7 +6,7 @@ use function Differ\Parser\parse;
 use function Differ\Ast\createAst;
 use function Differ\Renderer\render;
 
-function genDiff($beforeFile, $afterFile, $format): string
+function genDiff($beforeFile, $afterFile, $format = "pretty"): string
 {
     $beforeData = parse($beforeFile);
     $afterData = parse($afterFile);
@@ -16,5 +16,3 @@ function genDiff($beforeFile, $afterFile, $format): string
     print_r($diff);
     return $diff;
 }
-
-

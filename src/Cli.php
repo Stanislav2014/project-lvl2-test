@@ -31,4 +31,3 @@ function run()
 
     genDiff($beforeFile, $afterFile, $format);
 }
-

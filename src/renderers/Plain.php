@@ -37,10 +37,8 @@ function getPlain($item, $path = [])
     $pathForString = stringifyPlain($path);
 
     switch ($type) {
-
         case 'nested':
-             
-            return array_map( function ($item) use ($path) {
+            return array_map(function ($item) use ($path) {
                 return getPlain($item, $path);
             }, $children);
 
@@ -59,6 +57,4 @@ function getPlain($item, $path = [])
         //default:
         //break;
     }
-
-
 }

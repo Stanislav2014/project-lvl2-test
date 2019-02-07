@@ -10,7 +10,8 @@
     ],
     "bin": "bin/gendiff",
     "scripts": {
-        "phpunit":"phpunit tests",
+        "phpunit": "phpunit",
+        "tests":"phpunit tests",
         "phpcs": "phpcs",
         "phpcbf": "phpcbf"
     },

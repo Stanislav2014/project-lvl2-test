@@ -28,19 +28,15 @@ function createAst($beforeData, $afterData)
         $afterValue = $afterData[$key] ?? "";
 
         if (array_key_exists($key, $beforeData) && array_key_exists($key, $afterData)) {
-
             if (is_array($beforeValue) && is_array($afterValue)) {
                 return createNode('nested', $key, null, null, createAst($beforeValue, $afterValue));
-
             } elseif ($beforeValue === $afterValue) {
                 return createNode('unchanged', $key, $beforeValue, $afterValue, null);
-
             } elseif (($beforeValue !== $afterValue)) {
                 return createNode('changed', $key, $beforeValue, $afterValue, null);
             }
         } elseif (array_key_exists($key, $beforeData) && !array_key_exists($key, $afterData)) {
             return createNode('deleted', $key, $beforeValue, null, null);
-
         } elseif (!array_key_exists($key, $beforeData) && array_key_exists($key, $afterData)) {
             return createNode('added', $key, null, $afterValue, null);
         }

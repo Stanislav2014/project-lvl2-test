@@ -30,10 +30,14 @@ function stringifyPretty($value, $depth)
     if (!is_array($value)) {
         return $value;
     }
-    return "{" . "\n" . implode("\n",
-        array_map( function ($key, $item) use ($depth) {
-            return getSpace($depth) . $key. ": " . $item;
-        }, array_Keys($value), $value )) . "\n" . getSpace($depth - 1) . "}";
+    return "{" . "\n" . implode(
+        "\n",
+        array_map(function ($key, $item) use ($depth) {
+            return getSpace($depth) . $key . ": " . $item;
+        },
+        array_Keys($value),
+        $value)
+    ) . "\n" . getSpace($depth - 1) . "}";
 }
 
 function getSpace($depth, $str = "")
