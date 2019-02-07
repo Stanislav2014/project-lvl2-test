@@ -18,11 +18,16 @@ DOC;
 
 function run()
 {
-    $args = \Docopt::Handle(DOC);
+    $args = \Docopt::handle(DOC);
 
-    $beforeFile = $args['firstFile'];
-    $afterFile = $args['secondFile'];
-    $format = $args['fmt'];
+    //var_dump($args);
+
+    $beforeFile = $args['<firstFile>'];
+    $afterFile = $args['<secondFile>'];
+    $format = $args['--format'];
+    //var_dump($beforeFile);
+    //var_dump($afterFile);
+    //var_dump($format);
 
     genDiff($beforeFile, $afterFile, $format);
 }

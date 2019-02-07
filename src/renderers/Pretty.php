@@ -3,7 +3,7 @@
 namespace Differ\Renderer\Pretty;
 
 use function Differ\Renderer\boolToStr;
-use function Differ\Renderer\arrayToStr;
+use function Differ\Renderer\stringifyPretty;
 use function Differ\Renderer\getSpace;
 
 function pretty($ast)
@@ -30,8 +30,8 @@ function getPretty($item, $depth = 1)
         //var_dump($beforeValue);
         //var_dump($afterValue);
 
-        $beforeValue = is_bool($beforeValue) ? boolToStr($beforeValue) : arrayToStr($beforeValue, $depth + 1);
-        $afterValue = is_bool($afterValue) ? boolToStr($afterValue) : arrayToStr($afterValue, $depth + 1);
+        $beforeValue = is_bool($beforeValue) ? boolToStr($beforeValue) : stringifyPretty($beforeValue, $depth + 1);
+        $afterValue = is_bool($afterValue) ? boolToStr($afterValue) : stringifyPretty($afterValue, $depth + 1);
             
         var_dump($key);
         var_dump($beforeValue);

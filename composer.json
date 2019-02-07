@@ -10,7 +10,9 @@
     ],
     "bin": "bin/gendiff",
     "scripts": {
-        "phpunit":"phpunit tests"
+        "phpunit":"phpunit tests",
+        "phpcs": "phpcs",
+        "phpcbf": "phpcbf"
     },
     "autoload": {
         "files": [

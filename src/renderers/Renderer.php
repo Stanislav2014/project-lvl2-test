@@ -3,7 +3,7 @@
 namespace Differ\Renderer;
 
 use function Differ\Renderer\Pretty\pretty;
-use function Differ\Renderer\Plain\getPlain;
+use function Differ\Renderer\Plain\plain;
 
 
 function render($ast, $format)
@@ -13,7 +13,7 @@ function render($ast, $format)
             return pretty($ast);
             
         case 'plain':
-            return getPlain($ast);
+            return plain($ast);
         
         case 'json':
             return json_encode($ast, JSON_PRETTY_PRINT);
@@ -25,7 +25,7 @@ function boolToStr($bool)
     return $bool ? 'true' : 'false' ;
 }
 
-function arrayToStr($value, $depth)
+function stringifyPretty($value, $depth)
 {
     if (!is_array($value)) {
         return $value;
@@ -39,4 +39,9 @@ function arrayToStr($value, $depth)
 function getSpace($depth, $str = "")
 {
     return str_pad($str, $depth * 4, " ", STR_PAD_LEFT);
+}
+
+function stringifyPlain($arr)
+{
+    return implode('.', $arr);
 }
